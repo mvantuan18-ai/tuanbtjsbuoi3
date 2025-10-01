@@ -1,18 +1,11 @@
-const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+let year = Number(prompt("Nhập một năm (ví dụ: 2024):"));
+if (year > 0) {
 
-readline.question('Nhập năm: ', (yearInput) => {
-    const year = parseInt(yearInput);
-    if (year > 0) {
-        if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
-            console.log('Năm nhuận');
-        } else {
-            console.log('Không phải năm nhuận');
-        }
+    if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
+        console.log(year + " là năm nhuận");
     } else {
-        console.log('Năm không hợp lệ');
+        console.log(year + " không phải là năm nhuận");
     }
-    readline.close();
-});
+} else {
+    console.log("Năm không hợp lệ! Vui lòng nhập số > 0.");
+}
